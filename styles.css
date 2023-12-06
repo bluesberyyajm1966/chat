@@ -1,5 +1,5 @@
 body {
-    background: radial-gradient(circle at 10% 20%, rgb(300, 197, 61) 0%, rgb(255, 94, 7) 90%) !important;
+    background: radial-gradient(circle at 10% 20%, rgb(300, 197, 61) 0%, rgb(255, 94, 7) 90%);
 }
 
 /* Add more styles as needed */
@@ -11,18 +11,20 @@ body {
     top: 5%;
 }
 
-.dropdown button {
-    background-color: orange !important;
-    color: black !important;
+.dropdown button,
+.dropdown .content button {
+    background-color: orange;
+    color: black;
     padding: 10px 15px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.dropdown a {
+.dropdown a,
+.dropdown .content a {
     display: block;
-    color: black !important;
+    color: black;
     text-decoration: none;
     padding: 10px 15px;
     transition: background-color 0.3s ease;
@@ -31,7 +33,7 @@ body {
 .dropdown .content {
     display: none;
     position: absolute;
-    background-color: orange !important;
+    background-color: orange;
     min-width: 100px;
     box-shadow: 2px 2px 5px lightorange;
 }
@@ -41,11 +43,12 @@ body {
 }
 
 .dropdown:hover button,
-.dropdown .content:hover button {
-    background-color: red !important;
-    color: darkorange !important;
+.dropdown .content button {
+    background-color: red;
+    color: darkorange;
 }
 
-.dropdown a:hover {
-    background-color: lightorange !important;
+.dropdown a:hover,
+.dropdown .content a:hover {
+    background-color: lightorange;
 }
