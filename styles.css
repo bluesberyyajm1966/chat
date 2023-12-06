@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background: radial-gradient(circle at 10% 20%, rgb(300, 197, 61) 0%, rgb(255, 94, 7) 90%);
+        }
+
+        /* Add more styles as needed */
+
+        .dropdown {
+            display: inline-block;
+            position: absolute;
+            right: 5%;
+            top: 5%;
+        }
+
+        .dropdown button {
+            background-color: orange;
+            color: black;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .dropdown .content {
+            display: none;
+            position: absolute;
+            background-color: orange;
+            min-width: 100px;
+            box-shadow: 2px 2px 5px light orange;
+        }
+
+        .dropdown:hover .content {
+            display: block;
+        }
+
+        .dropdown:hover button {
+            background-color: red;
+        }
+
+        .dropdown a:hover {
+            background-color: light orange;
+        }
+    </style>
+
+    <script>
+        function changeGradient(color1, color2) {
+            document.body.style.background = 'radial-gradient(circle at 10% 20%, ' + color1 + ' 0%, ' + color2 + ' 90%)';
+        }
+    </script>
+</head>
+
+<body>
+
+    <a href="https://bootlegsnake.netlify.app/">
+        <button style="font-size:65px; background-color: red; color:darkorange; border-radius:20px; text-align:center";>snake</button>
+    </a>
+    <a href="https://bootleg2048.netlify.app/">
+        <button style="font-size:65px; background-color: red; color:darkorange; border-radius:20px; text-align:center";>2048</button>
+    </a>
+
+    <div class="dropdown">
+        <button>Settings</button>
+        <div class="content">
+            <a href="#" onclick="changeGradient('rgb(300, 197, 61)', 'rgb(255, 94, 7)')">Red</a>
+            <a href="#" onclick="changeGradient('rgb(61, 197, 300)', 'rgb(7, 94, 255)')">Blue</a>
+            <a href="#" onclick="changeGradient('#000000', '#ffffff')">Black and White</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
