@@ -1,69 +1,95 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="styles.css">
 
     <style>
         body {
-            background: linear-gradient(to right, #ff7e5f, #feb47b); /* Set a default gradient for the body */
+            background: radial-gradient(circle at 10% 20%, rgb(300, 197, 61) 0%, rgb(255, 94, 7) 90%);
         }
 
         /* Add more styles as needed */
 
         .dropdown {
-            position: relative;
             display: inline-block;
+            position: absolute;
+            right: 5%;
+            top: 5%;
         }
 
         .dropdown button {
-            font-size: 20px;
-            background-color: red;
-            color: darkorange;
-            border-radius: 20px;
-            text-align: center;
+            background-color: orange;
+            color: black;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .content {
+        .dropdown a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown .content {
             display: none;
             position: absolute;
-            background: linear-gradient(to right, #ff7e5f, #feb47b); /* Default gradient for the dropdown */
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
+            background-color: orange;
+            min-width: 100px;
+            box-shadow: 2px 2px 5px light orange;
         }
 
-        .content a {
-            color: black;
-            padding: 12px 16px;
+        .dropdown:hover .content {
             display: block;
-            text-decoration: none;
+        }
+
+        .dropdown:hover button {
+            background-color: red;
+            color: darkorange;
+        }
+
+        .dropdown a:hover {
+            background-color: light orange;
         }
     </style>
 
     <script>
         function changeGradient(color1, color2) {
-            document.body.style.background = 'linear-gradient(to right, ' + color1 + ', ' + color2 + ')';
+            document.body.style.background = 'radial-gradient(circle at 10% 20%, ' + color1 + ' 0%, ' + color2 + ' 90%)';
+            document.querySelectorAll('.dropdown button, .dropdown a').forEach(function (el) {
+                el.style.backgroundColor = color1;
+                el.style.color = color2 === 'rgb(255, 94, 7)' ? 'darkorange' : 'black'; // Adjust text color based on background color
+            });
         }
     </script>
 </head>
+
 <body>
 
-<a href="https://bootlegsnake.netlify.app/">
-    <button style="font-size:65px; background-color: red; color:darkorange; border-radius:20px; text-align:center";>snake</button>
-</a>
-<a href="https://bootleg2048.netlify.app/">
-    <button style="font-size:65px; background-color: red; color:darkorange; border-radius:20px; text-align:center";>2048</button>
-</a>
+    <a href="https://bootlegsnake.netlify.app/">
+        <button style="font-size:65px; background-color: red; color:darkorange; border-radius:20px; text-align:center";>snake</button>
+    </a>
+    <a href="https://bootleg2048.netlify.app/">
+        <button style="font-size:65px; background-color: red; color:darkorange; border-radius:20px; text-align:center";>2048</button>
+    </a>
 
-<div class="dropdown">
-    <button>Settings</button>
-    <div class="content">
-        <a href="#" onclick="changeGradient('#ff7e5f', '#feb47b')">Red</a>
-        <a href="#" onclick="changeGradient('#5f7eff', '#7b9bfe')">Blue</a>
-        <a href="#" onclick="changeGradient('#000000', '#ffffff')">Black and White</a>
+    <div class="dropdown">
+        <button>Settings</button>
+        <div class="content">
+            <a href="#" onclick="changeGradient('rgb(300, 197, 61)', 'rgb(255, 94, 7)')">Red</a>
+            <a href="#" onclick="changeGradient('rgb(61, 197, 300)', 'rgb(7, 94, 255)')">Blue</a>
+            <a href="#" onclick="changeGradient('#000000', '#ffffff')">Black and White</a>
+        </div>
     </div>
-</div>
+
+</body>
+
+</html>
 
 </body>
 </html>
