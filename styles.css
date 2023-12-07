@@ -44,7 +44,7 @@ body {
 
 .dropdown:hover button,
 .dropdown .content:hover button {
-    background-color: #e763f9; /* Darker gray */
+    background-color: #e4e7e4; /* Darker gray */
     color: white;
 }
 
